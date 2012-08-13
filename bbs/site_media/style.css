@@ -1,0 +1,172 @@
+#mainbody{
+	width:800px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#logo{
+	font-family: 맑은 고딕;
+    text-decoration: none;
+	color:#000000;
+
+}
+#searchtable{
+	margin-left:auto;
+/*	margin-right:auto;*/
+}
+#search_selectbox, #id_comment{
+	font-family: 맑은 고딕;
+	font-size:10pt;
+	border-width: 1px;
+	border-color:#000000;
+	background-color:#FFFFFF;
+	margin: 2px;
+}
+.comment{
+	margin: 2px;
+	padding: 5px;
+	border: 1px solid #000;
+}
+.writebox{
+	width:723px;
+}
+tr {
+	font-family: 맑은 고딕;
+	font-size:10pt;
+}
+h1 {
+	font-family: 맑은 고딕;
+}
+p {
+	font-family: 맑은 고딕;
+	font-size:9pt;
+}
+p.usermsg {
+	font-family: 맑은 고딕;
+	font-size:10pt;
+}
+input{
+/*	display: block;*/
+	float:center;
+}
+
+.list_table {
+	border: 0px solid #black;
+	border-collapse:collapse;
+}
+
+.list_content{
+	Text-align:center;
+}
+.write_submit{
+	width:100px;
+	font-family: 맑은 고딕;
+	font-size:12pt;
+	border-width: 1px;
+	border-color:#000000;
+	background-color:#FFFFFF;
+	float:right;
+}
+.submit-post{
+	width:100px;
+	height:40px;
+	margin:2px;
+	font-family: 맑은 고딕;
+	font-size:12pt;
+	border-width: 1px;
+	border-color:#000000;
+	background-color:#FFFFFF;
+	float:right;
+}
+.search_submit{
+	width:60px;
+	font-family: 맑은 고딕;
+	font-size:10pt;
+	border-width: 1px;
+	border-color:#000000;
+	background-color:#FFFFFF;
+	float:right;
+}
+.write_submit2{
+	width:80px;
+	font-family: 맑은 고딕;
+	font-size:10pt;
+	border-width: 1px;
+	border-color:#000000;
+	background-color:#FFFFFF;
+	float:right;
+}
+.login_submit{
+	width:90px;
+	font-family: 맑은 고딕;
+	font-size:11pt;
+	border-width: 1px;
+	/*border-color:#ABADB3;*/
+	border-color:#999999;
+	background-color:#FFFFFF;
+	float:left;
+}
+.sign_submit{
+	width:90px;
+	font-family: 맑은 고딕;
+	font-size:11pt;
+	border-width: 1px;
+	/*border-color:#ABADB3;*/
+	border-color:#999999;
+	background-color:#FFFFFF;
+	float:right;
+}
+form {
+    font-family: arial;
+    font-size: 9pt;
+    color: #666666;
+    text-decoration: none;
+}
+/*a:link, a:visited, a:active {
+    font-family: 맑은 고딕;
+    font-size: 10pt;
+    color: #ff6600;
+    text-decoration: none;
+}*/
+a.close{
+	font-family: verdana;
+	font-size:10pt;
+	color:#000;
+    text-decoration: none;
+	border: 1px solid #000;
+	float:right;
+}
+a.close:hover{
+	font-family: verdana;
+	font-size:10pt;
+	color:#000;
+	background-color: #AAAAAA;
+    text-decoration: none;
+	border: 1px solid #000;
+	float:right;
+}
+a.list{
+    font-family: 맑은 고딕;
+    font-size: 10pt;
+    text-decoration: none;
+	margin-left:5px;
+	color:#000000;
+
+}
+a.list:hover {
+    font-family: 맑은 고딕;
+    font-size: 10pt;
+	background-color: #EEEEEE;
+    text-decoration: underline
+}
+a.logout:hover {
+    font-family: 맑은 고딕;
+    font-size: 10pt;
+	background-color: #EEEEEE;
+    text-decoration: underline
+}
+
+#content {
+	font-family: 맑은 고딕;
+	font-size:9pt;
+	padding-left:10px;
+}

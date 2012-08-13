@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load comments %}
+{% block title %}{{ user.username }}님이 로그인 하셨습니다.{% endblock %}
+{% block head %} 목록 {% endblock %}
+{% block content %}
+		<table width=800 border=1 class=list_table>
+			<caption ALIGN="BOTTOM">
+				<p align=right>
+					<table id=searchtable>
+					<form method="get" action=".">
+					<tr>
+						<td>{{ form.type}} {{ form.query }}</td> <!-- form.query 로 불러오거나, label="" 로 정의하면 라벨이 나타나지 않음 -->
+						<td><input class=search_submit type="submit" value="검 색" /></td>
+						<td><input class=write_submit2 type="button" value="글 쓰 기" onclick="location.href='write/'" /></td>
+					</tr>
+					</table>
+				</p>
+			</caption>
+  			<tr>
+				<th width="5%">번호</th>
+				<th width="68%">제목</th>
+				<th width="10%">글쓴이</th>
+				<th width="7%">조회수</th>
+				<th width="10%">날짜</th>
+  			</tr>
+			{% for list in lists %}
+			{% get_comment_count for bbsapp.list list.id as comment_count %}
+			<tr>
+				<td class=list_content>{{ list.id }}</td>
+				<td><a class=list href='/bbs/{{ list.id }}'>{{ list.title }} [{{ comment_count }}]</a></td>
+				<td class=list_content>{{ list.user }}</td>
+				<td class=list_content>{{ list.how_many_views }}</td>
+				<td class=list_content>{{ list.date|date:"Y/m/d" }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+{% endblock %}

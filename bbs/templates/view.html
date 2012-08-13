@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load comments %}
+{% block title %}{{ user.username }}님이 로그인 하셨습니다.{% endblock %}
+{% block head %} {{ view.id }}번글의 내용입니다. {% endblock %}
+{% block content %}
+		<table width=800 border=1 class=list_table>
+			<caption ALIGN="BOTTOM">
+				<p align=right>
+					<!--<input class=write_submit2 type="button" value="답글" onclick="location.href='write/'" />-->
+					{% if user.username in view.user.username %}
+					<input class=write_submit2 type="button" value="삭제" onclick="location.href='delete'" />
+					<input class=write_submit2 type="button" value="수정" onclick="location.href='modify'" />
+					{% endif %}
+					<input class=write_submit2 type="button" value="목록" onclick="location.href='/bbs/'" />
+				</p>
+			</caption>
+  			<tr bgcolor="#000000">
+				<td width="100%" colspan=3><font size=3 color=#FFFFFF><b>글제목 : {{ view.title }}</b></font></td>
+			</tr>
+			<tr>
+				<td width="100">조회수 : {{ view.how_many_views }}</td>
+				<td width="420">글쓴이 : {{ view.user }}</td>
+				<td width="280">작성일자 : {{ view.date|date:"Y년 m월 d일 H시 i분 s초" }}</td>
+  			</tr>
+			<tr>
+				<td id="content" colspan=3>{{ view.content|urlizetrunc:40|linebreaks }}</td>
+			</tr>
+			<tr>
+				<td colspan=3>
+					{% get_comment_list for bbsapp.list view_page.id as comment_list %}
+					{% for comment in comment_list %}
+					<div class="comment">
+					{% if user == comment.user %}
+					<a class="close" href="{% url comments-delete comment.id %}">&nbsp;X&nbsp;</a>
+{% endif %}
+						<p><b>{{ comment.user_name }}</b>님의 댓글 ({{ comment.submit_date|date:"Y/m/d H:i" }}) : {{ comment.comment|escape|urlizetrunc:40|linebreaks }} </p>
+					</div>
+					{% endfor %}
+					<div>
+						<p>
+						{% render_comment_form for bbsapp.list view_page.id %}
+						</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Refresh" Content="0; url=/bbs/{{ comment.object_pk }}"> 
+		<title> 게시판 | 댓글완료</title>
+		<link rel="stylesheet" type="text/css" href="/site_media/style.css" />
+	</head>
+	<body>
+		{% if user.is_authenticated %}
+		<div id=mainbody>
+		<table width=800>
+			<tr>
+				<td width=50>
+					<h1><a href="/bbs/" id=logo>BBS</a></h1>
+				</td>
+				<td>
+					<font size=4 face='맑은 고딕'>| {% block head %}{% endblock %}</font>
+				</td>
+				<td style='vertical-align:bottom'>
+					<p align=right class=usermsg>{{ user.username }}님이 로그인 하셨습니다. <a class=logout href="/logout/">[로그아웃]</a></p>
+				</td>
+			</tr>
+		</table>
+	<p> 댓글 입력 완료 </p>
+	{% if comment %}
+		<p><a href="/bbs/{{ comment.object_pk }}/">확인</a></p>
+	{% endif %}
+		{% else %}
+		<p> 잘못된 접근입니다. 먼저 <a href="/">[로그인]</a> 또는 <a href="/register/">[가입]</a> 하세요.</p>
+		{% endif %}
+		</div>
+	</body>
+</html>
+  

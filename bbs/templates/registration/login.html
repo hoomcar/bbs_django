@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title> 로그인 - BBS에 오신것을 환영합니다.</title>
+		<link rel="stylesheet" type="text/css" href="/site_media/style.css" />
+	</head>
+	<body>
+	<center>
+		<h1>사용자 로그인</h1>
+		{% if form.errors %}
+			<p> 사용자 이름과 비밀번호가 일치하지 않습니다. 다시 시도해보세요.</p>
+		{% endif %}
+		<form method="post" action=".">{% csrf_token %}
+			<table>
+				<tr>
+					<td><label for="id_username">아이디 : </label></td>
+					<td>{{ form.username }}</td>
+				</tr>
+				<tr>
+					<td><label for="id_password">암&nbsp;&nbsp;호 : </label></td>
+					<td>{{ form.password }}</td>
+				</tr>
+				<tr>
+					<td colspan=2><input type="hidden" name="next" value="/bbs/" />
+						<input class=login_submit type="submit" value="로그인" />
+						<input class=sign_submit type="button" value="회원가입" onclick="location.href='/register/'" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+	</body>
+</html>

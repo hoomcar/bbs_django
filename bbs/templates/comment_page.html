@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load comments %}
+{% block title %}{{ user.username }}님이 로그인 하셨습니다.{% endblock %}
+{% block head %} 댓글남기기 {% endblock %}
+{% block content %}
+
+{% get_comment_list for bbsapp.list view_page.id as comment_list %}
+{% for comment in comment_list %}
+	<div class="comment">
+		<p><b>{{ comment.user_name }}</b> : {{ comment.comment|escape|urlizetrunc:40|linebreaks }} </p>
+	</div>
+{% endfor %}
+
+{% render_comment_form for bbsapp.list view_page.id %}
+
+{% endblock %}

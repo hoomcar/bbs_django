@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}{{ state }}{% endblock %}
+{% block head %} {{ state }} {% endblock %}
+{% block content %}
+		<table border=0 width=800 id=writetable>
+		<form method="post" action=".">{% csrf_token %}
+			{{ form.as_table }}
+			<tr><td colspan=2>
+			<input class=write_submit type="submit" value="저장" />
+			<input class=write_submit type="button" value="목록" onclick="location.href='/bbs/'" />
+			</td></tr>
+		</form>
+		</table>
+{% endblock %}
